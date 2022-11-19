@@ -1,0 +1,56 @@
+$color-assent:#FBD784;
+$color-BG-body:#0B1D26;
+$color-font:#ffff;
+$color-numbers:#D9D9D9;
+
+
+   /* From https://css.glass */
+@mixin efectglass{
+background: rgba(19, 19, 19, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(19, 19, 19, 0.3);
+}
+ 
+//hover
+
+@mixin hoverTex {
+    color: $color-assent;
+    transition: all 400ms ease-in-out;
+    
+}
+
+
+//media
+
+@mixin tablet {
+    @media screen and (min-width:48em) {
+        @content;
+        
+    }
+
+}
+
+@mixin tablet-nav {
+    @media screen and (max-width:48em) {
+        @content;
+        
+    }
+
+}
+
+@mixin desktop {
+    @media screen and (min-width:75em) {
+        @content;
+        
+    }
+}
+
+@mixin desktop-nav {
+    @media screen and (max-width:75em) {
+        @content;
+        
+    }
+}

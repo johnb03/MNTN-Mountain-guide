@@ -1,0 +1,18 @@
+@import "./nav";
+@import "./variable";
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Poppins:wght@700;800&display=swap');
+
+html {
+  box-sizing: border-box;
+  font: $color-font;
+  
+  
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

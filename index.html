@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <link rel="stylesheet" href="/dist/css/normalize.css">
+    <link rel="stylesheet" href="/dist/css/main.css">
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="el proposito de MNTN es guiar a los deportistas extremos de las montanas a tener una experiencia unica y segura ">
+    <meta name="description"
+        content="el proposito de MNTN es guiar a los deportistas extremos de las montanas a tener una experiencia unica y segura ">
     <meta name="keywords" content="Mountain, montanas, extremo, guia, camping">
     <meta name="author" content="John Berroa">
     <title>MNTN-landing-page</title>
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+    <script defer src="/js/main.js"></script>
 </head>
+
 <body>
-    
+    <style>
+        body {
+            background: grey;
+        }
+    </style>
+    <section id="nav-main">
+        <nav class="nav__bar">
+            <div class="nav__logo"><img src="/assets/Logo.png" alt="logo MNTN" class="logo"></div>
+            <button class="ham" aria-label="Abrir-menu">
+                <iconify-icon icon="material-symbols:menu-open" width="36" height="36"></iconify-icon>
+            </button>
+            <div class="nav__contain ">
+
+                <ul class="nav__links">
+                    <li class="nav__item"><a href="#equipamen" class="link">Equipament</a></li>
+                    <li class="nav__item"><a href="#" class="link">About us </a></li>
+                    <li class="nav__item"><a href="#" class="link">Blog</a></li>
+                </ul>
+
+                <div class="nav__account">
+                    <img class="icon__account" src="/assets/cart.svg" alt="icon user account"></img>
+                    <a href="#" class="link">Account</a>
+                </div>
+            </div>
+        </nav>
+    </section>
+
 </body>
+
+
 </html>
