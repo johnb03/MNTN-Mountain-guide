@@ -25,6 +25,49 @@ border: 1px solid rgba(19, 19, 19, 0.3);
 
 //media
 
+//mediafor nav
+@mixin tablet-nav {
+    @media screen and (max-width:48em) {
+        @content;
+        
+    }
+
+}
+
+@mixin desktop-nav {
+    @media screen and (max-width:75em) {
+        @content;
+        
+    }
+}
+
+//media general
+
+@mixin mobile-320 {
+    @media screen and (min-width:48em) {
+        @content;
+        
+    }
+
+}
+
+@mixin mobile-375 {
+    @media screen and (min-width:23.4375em) {
+        @content;
+        
+    }
+
+}
+
+@mixin mobile-425 {
+    @media screen and (min-width:26.5625em) {
+        @content;
+        
+    }
+
+}
+
+
 @mixin tablet {
     @media screen and (min-width:48em) {
         @content;
@@ -33,12 +76,12 @@ border: 1px solid rgba(19, 19, 19, 0.3);
 
 }
 
-@mixin tablet-nav {
-    @media screen and (max-width:48em) {
+
+@mixin laptop {
+    @media screen and (min-width:64em) {
         @content;
         
     }
-
 }
 
 @mixin desktop {
@@ -48,9 +91,3 @@ border: 1px solid rgba(19, 19, 19, 0.3);
     }
 }
 
-@mixin desktop-nav {
-    @media screen and (max-width:75em) {
-        @content;
-        
-    }
-}

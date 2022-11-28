@@ -1,14 +1,12 @@
 @import "./nav";
 @import "./variable";
 
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Poppins:wght@700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Poppins:wght@700;800&display=swap");
 
 html {
   box-sizing: border-box;
-  font: $color-font;
-  
-  
+  color: $color-font;
+  font-family: "Poppins", sans-serif;
 }
 
 *,
@@ -16,3 +14,208 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
+body {
+  background-color: $color-BG-body;
+  background-image: url(/assets/BG-hero-1.png), url(/assets/BG-hero-2.png);
+  background-repeat: no-repeat, no-repeat;
+  background-position-y: -15rem, -20rem;
+  background-size: cover;
+
+  .container {
+    width: 100%;
+    height: 100vh;
+
+    .box-bg {
+      position: relative;
+      width: 100%;
+      display: flex;
+      z-index: -5;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      img:nth-child(1) {
+        top: 8rem;
+      }
+
+      img:nth-child(2) {
+        top: 14rem;
+        @include tablet {
+          top: 18rem;
+        }
+      }
+
+      img:nth-child(3) {
+        top: 17rem;
+
+        @include mobile-425 {
+          top: 18rem;
+        }
+        @include tablet {
+          top: 26rem;
+        }
+        @include laptop {
+          top: 34.7rem;
+        }
+      }
+    }
+
+    .hero__content {
+      width: 100%;
+      height: 70vh;
+      padding: 1rem;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas:
+        "ht"
+        "ht"
+        "tl"
+        "hs";
+
+      .hero-titles {
+        grid-area: ht;
+
+        .hero__title {
+          font-size: 1.5rem;
+          font-family: "DM Serif Text", serif;
+          font-weight: 500;
+          letter-spacing: 0.8px;
+        }
+
+        .hero__sub-title {
+          color: $color-assent;
+          text-transform: uppercase;
+          font-weight: 300;
+          font-size: 0.8rem;
+          letter-spacing: 2px;
+
+          span {
+            border-top: 1px solid $color-assent;
+            width: 35px;
+            height: auto;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            text-transform: uppercase;
+            margin-right: 5px;
+          }
+        }
+        .cta {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .hero__social-media {
+        grid-area: hs;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 0.5rem;
+        padding-top: 0.8rem;
+
+        // .hero__social-text {
+        //   // writing-mode: vertical-lr;
+        // }
+      }
+
+      .timeline {
+        width: 100%;
+        grid-area: tl;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5em;
+        gap: 0.5rem;
+        justify-self: right;
+        position: fixed;
+        top: 35%;
+
+        .timeline__text {
+          margin: 0;
+        }
+
+        .number a{
+          text-decoration: none;
+          color: $color-font;
+          
+        }
+      }
+    }
+  
+
+  .guide-trav {
+    width: 40vw;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: minmax(300px, 1fr);
+    grid-template-rows: repeat(3, 0.5fr);
+    grid-template-areas:
+      "t1"
+      "t2"
+      "t3";
+    gap: 2rem;
+
+    // @include desktop{
+    //   width: 60vw;
+    // }
+
+    
+    }
+
+
+    
+ 
+
+
+  .guide__card{
+    text-align: center;
+    padding: 5px;
+   
+    @include desktop{
+      display: flex;
+      gap: 2rem;
+    }
+
+    
+    
+    .card__body{
+      font-size: .8rem;
+      line-height: 1.3rem;
+     @include desktop{
+      width: 350px;
+     }
+    }
+
+
+
+    .card__figure img{
+      width: 100%;
+      height: auto;
+    }
+
+
+    .button{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+      border: transparent;
+      background: transparent;
+      color: $color-assent;
+    }
+  } 
+ }
+}
+
+  
+

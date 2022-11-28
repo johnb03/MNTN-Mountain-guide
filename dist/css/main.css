@@ -1,8 +1,7 @@
 /* From https://css.glass */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Poppins:wght@700;800&display=swap");
 .nav__bar {
-  width: 95%;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   padding: 10px;
   justify-content: space-between;
@@ -12,6 +11,7 @@
   width: 100px;
   display: flex;
   align-items: center;
+  z-index: 20;
 }
 .nav__bar .nav__logo .logo {
   width: 100%;
@@ -39,11 +39,13 @@
 .nav__bar .nav__contain {
   width: 65%;
   justify-content: space-between;
+  z-index: 10;
 }
 @media screen and (max-width: 48em) {
   .nav__bar .nav__contain {
     width: 100%;
-    position: fixed;
+    position: absolute;
+    top: 0;
     left: 100%;
     text-align: center;
     flex-direction: column;
@@ -52,7 +54,9 @@
     align-items: center;
     background: black;
     height: 100vh;
-    transition: all 0.3s ease-in-out;
+    z-index: 5;
+    transition: all 0.1s ease-in-out;
+    display: none;
     background: rgba(19, 19, 19, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -97,17 +101,183 @@
 @media screen and (max-width: 48em) {
   .nav__bar .nav__contain-visible {
     left: 0;
+    display: flex;
   }
 }
 
 /* From https://css.glass */
 html {
   box-sizing: border-box;
-  font: white;
+  color: white;
+  font-family: "Poppins", sans-serif;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+body {
+  background-color: #0B1D26;
+  background-image: url(/assets/BG-hero-1.png), url(/assets/BG-hero-2.png);
+  background-repeat: no-repeat, no-repeat;
+  background-position-y: -15rem, -20rem;
+  background-size: cover;
+}
+body .container {
+  width: 100%;
+  height: 100vh;
+}
+body .container .box-bg {
+  position: relative;
+  width: 100%;
+  display: flex;
+  z-index: -5;
+}
+body .container .box-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .container .box-bg img:nth-child(1) {
+  top: 8rem;
+}
+body .container .box-bg img:nth-child(2) {
+  top: 14rem;
+}
+@media screen and (min-width: 48em) {
+  body .container .box-bg img:nth-child(2) {
+    top: 18rem;
+  }
+}
+body .container .box-bg img:nth-child(3) {
+  top: 17rem;
+}
+@media screen and (min-width: 26.5625em) {
+  body .container .box-bg img:nth-child(3) {
+    top: 18rem;
+  }
+}
+@media screen and (min-width: 48em) {
+  body .container .box-bg img:nth-child(3) {
+    top: 26rem;
+  }
+}
+@media screen and (min-width: 64em) {
+  body .container .box-bg img:nth-child(3) {
+    top: 34.7rem;
+  }
+}
+body .container .hero__content {
+  width: 100%;
+  height: 70vh;
+  padding: 1rem;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "ht" "ht" "tl" "hs";
+}
+body .container .hero__content .hero-titles {
+  grid-area: ht;
+}
+body .container .hero__content .hero-titles .hero__title {
+  font-size: 1.5rem;
+  font-family: "DM Serif Text", serif;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+}
+body .container .hero__content .hero-titles .hero__sub-title {
+  color: #FBD784;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+body .container .hero__content .hero-titles .hero__sub-title span {
+  border-top: 1px solid #FBD784;
+  width: 35px;
+  height: auto;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+body .container .hero__content .hero-titles .cta {
+  display: flex;
+  align-items: center;
+}
+body .container .hero__content .hero__social-media {
+  grid-area: hs;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+  padding-top: 0.8rem;
+}
+body .container .hero__content .timeline {
+  width: 100%;
+  grid-area: tl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5em;
+  gap: 0.5rem;
+  justify-self: right;
+  position: fixed;
+  top: 35%;
+}
+body .container .hero__content .timeline .timeline__text {
+  margin: 0;
+}
+body .container .hero__content .timeline .number a {
+  text-decoration: none;
+  color: white;
+}
+body .container .guide-trav {
+  width: 40vw;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: minmax(300px, 1fr);
+  grid-template-rows: repeat(3, 0.5fr);
+  grid-template-areas: "t1" "t2" "t3";
+  gap: 2rem;
+}
+body .container .guide__card {
+  text-align: center;
+  padding: 5px;
+}
+@media screen and (min-width: 75em) {
+  body .container .guide__card {
+    display: flex;
+    gap: 2rem;
+  }
+}
+body .container .guide__card .card__body {
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+}
+@media screen and (min-width: 75em) {
+  body .container .guide__card .card__body {
+    width: 350px;
+  }
+}
+body .container .guide__card .card__figure img {
+  width: 100%;
+  height: auto;
+}
+body .container .guide__card .button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  border: transparent;
+  background: transparent;
+  color: #FBD784;
 }/*# sourceMappingURL=main.css.map */

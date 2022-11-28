@@ -1,24 +1,27 @@
 @import "variable";
 
 .nav__bar {
-  width: 95%;
-  margin: 0 auto;
+  width: 100%;
+  // margin: 0 auto;
   display: flex;
   padding: 10px;
   justify-content: space-between;
   background: transparent;
-
+  // overflow: hidden;
+  
+  
   .nav__logo {
     width: 100px;
     display: flex;
     align-items: center;
-
+    z-index: 20;
+    
     .logo {
       width: 100%;
       height: auto;
     }
   }
-
+  
   .nav__contain,
   .nav__links,
   .ham {
@@ -31,8 +34,9 @@
     background: transparent;
     border: none;
     color: $color-font;
-   
-
+  
+    
+    
     @include tablet-nav {
       display: block;
       cursor: pointer;
@@ -45,11 +49,13 @@
   .nav__contain {
     width: 65%;
     justify-content: space-between;
-    // display: none;
-
+    z-index: 10;
+    
+    
     @include tablet-nav {
       width: 100%;
-      position:fixed ;
+      position:absolute ;
+      top: 0;
       left: 100%;
       text-align: center;
       flex-direction: column;
@@ -58,10 +64,13 @@
       align-items: center;
       background: black;
       height: 100vh;
-      transition: all .3s ease-in-out;
-
+      z-index: 5;
+      transition: all .10s ease-in-out ;
+      display: none;
+      
       //efecto glass
       @include efectglass;
+
     }
 
     .link {
@@ -70,6 +79,7 @@
       color: $color-font;
       cursor: pointer;
       user-select: none;
+     
     }
 
     .link:hover {
@@ -79,6 +89,7 @@
     }
 
     .nav__links {
+      
       gap: 1rem;
       list-style: none;
       @include tablet-nav {
@@ -100,6 +111,8 @@
   .nav__contain-visible {
     @include tablet-nav{
       left: 0;
+      display: flex;
+      
     }
    }
   

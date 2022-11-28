@@ -18,34 +18,105 @@
 </head>
 
 <body>
-    <style>
-        body {
-            background: grey;
-        }
-    </style>
-    <section id="nav-main">
-        <nav class="nav__bar">
-            <div class="nav__logo"><img src="/assets/Logo.png" alt="logo MNTN" class="logo"></div>
-            <button class="ham" aria-label="Abrir-menu">
-                <iconify-icon icon="material-symbols:menu-open" width="36" height="36"></iconify-icon>
-            </button>
-            <div class="nav__contain ">
 
-                <ul class="nav__links">
-                    <li class="nav__item"><a href="#equipamen" class="link">Equipament</a></li>
-                    <li class="nav__item"><a href="#" class="link">About us </a></li>
-                    <li class="nav__item"><a href="#" class="link">Blog</a></li>
-                </ul>
+    <div class="container">
 
-                <div class="nav__account">
-                    <img class="icon__account" src="/assets/cart.svg" alt="icon user account"></img>
-                    <a href="#" class="link">Account</a>
+
+        <section id="nav-main">
+            <nav class="nav__bar">
+                <div class="nav__logo"><img src="/assets/Logo.png" alt="logo MNTN" class="logo"></div>
+                <button class="ham" aria-label="Abrir-menu">
+                    <iconify-icon icon="material-symbols:menu-open" width="36" height="36"></iconify-icon>
+                </button>
+
+                <div class="nav__contain ">
+
+                    <ul class="nav__links">
+                        <li class="nav__item"><a href="#equipamen" class="link">Equipament</a></li>
+                        <li class="nav__item"><a href="#" class="link">About us </a></li>
+                        <li class="nav__item"><a href="#" class="link">Blog</a></li>
+                    </ul>
+
+                    <div class="nav__account">
+                        <img class="icon__account" src="/assets/cart.svg" alt="icon user account"></img>
+                        <a href="#" class="link">Account</a>
+                    </div>
                 </div>
+            </nav>
+        </section>
+
+        <section id="bg-images" class="box-bg">
+
+            <img src="/assets/BG-hero-3.png" alt="">
+            <img src="/assets/BG-hero-4.png" alt="">
+            <img src="/assets/BG-hero-5.png" alt="">
+
+        </section>
+
+        <section id="hero-section">
+
+            <div class="hero__content">
+
+                <div class="hero-titles">
+                    <p class="hero__sub-title">
+                        <span class="line-subt"></span> a hiking guide
+                    </p>
+                    <h1 class="hero__title">Be Prepared For The Mountains And Beyond!</h1>
+                    <span class="cta">scroll down <iconify-icon width="24"  icon="material-symbols:arrow-downward"
+                            style="color: white;"></iconify-icon></span>
+                </div>
+
+                <div class="hero__social-media">
+                    <p class="hero__social-text">Follow us</p>
+                    <span class="social__icon">
+                        <iconify-icon icon="mdi:instagram" style="color: white;"></iconify-icon>
+                        <iconify-icon icon="mdi:twitter" style="color: white;"></iconify-icon>
+                    </span>
+
+                </div>
+
+                <div class="timeline">
+                    <p class="timeline__text">Start</p>
+                    <spam class="number"><a href="#timeline-01">01</a></spam>
+                    <spam class="number"><a href="#timeline-02">02</a></spam>
+                    <spam class="number"><a href="#timeline-03">03</a></spam>
+                </div>
+
             </div>
-        </nav>
-    </section>
+
+
+        </section>
+
+        <section id="travelers">
+            <article id="timeline-01" class="guide-trav">
+                <div class="guide__stared">
+
+                    <span class="span__number">01</span>
+                    <div class="guide__card">
+                        <aside class="card__side">
+                            <figure class="card__figure"><img src="/assets/image-tagline-1.png" alt="image-travel"></figure>
+                        </aside>
+                        <div class="card__body">
+                            <h3 class="sub__title">
+                                <span class="span"></span>
+                                get started
+                            </h3>
+                            <h2 class="card__title">What level of hiker are you</h2>
+                            <p class="card__copy">
+                                Determining what level of hiker you are can be an important tool when planning future hikes. This hiking level guide will help you plan hikes according to different hike ratings set by various websites like All Trails and Modern Hiker. What type of hiker are you - novice, moderate, advanced moderate, expert, or expert backpacker? 
+                            </p>
+                            <footer class="card__footer"><button class="button">
+                                read more <iconify-icon icon="material-symbols:arrow-right-alt-rounded" style="color: #fbd784;"></iconify-icon>
+                            </button></footer>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+
+
+    </div>
 
 </body>
-
-
 </html>
