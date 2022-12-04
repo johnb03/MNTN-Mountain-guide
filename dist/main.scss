@@ -1,25 +1,13 @@
+@import "./reset";
 @import "./nav";
 @import "./variable";
-
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Poppins:wght@700;800&display=swap");
-
-html {
-  box-sizing: border-box;
-  color: $color-font;
-  font-family: "Poppins", sans-serif;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
 
 body {
   background-color: $color-BG-body;
   background-image: url(/assets/BG-hero-1.png), url(/assets/BG-hero-2.png);
   background-repeat: no-repeat, no-repeat;
-  background-position-y: -15rem, -20rem;
+  background-position-y: -8rem, -19rem;
   background-size: cover;
 
   .container {
@@ -63,6 +51,10 @@ body {
         @include laptop {
           top: 34.7rem;
         }
+
+        @include desktop {
+          top: 41.8rem;
+        }
       }
     }
 
@@ -71,14 +63,23 @@ body {
       height: 70vh;
       padding: 1rem;
       display: grid;
+
       justify-content: center;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
+      grid-template-rows: auto;
       grid-template-areas:
-        "ht"
         "ht"
         "tl"
         "hs";
+
+      @include desktop {
+        height: 100vh;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: repeat(2, 50%);
+        grid-template-areas:
+          "hs  ht ht tl"
+          "hs  ht ht tl";
+      }
 
       .hero-titles {
         grid-area: ht;
@@ -88,23 +89,17 @@ body {
           font-family: "DM Serif Text", serif;
           font-weight: 500;
           letter-spacing: 0.8px;
+
+          @include desktop {
+            font-size: 3.5rem;
+          }
         }
 
         .hero__sub-title {
-          color: $color-assent;
-          text-transform: uppercase;
-          font-weight: 300;
-          font-size: 0.8rem;
-          letter-spacing: 2px;
+          @include sub-t;
 
           span {
-            border-top: 1px solid $color-assent;
-            width: 35px;
-            height: auto;
-            display: inline-block;
-            padding-bottom: 0.3rem;
-            text-transform: uppercase;
-            margin-right: 5px;
+            @include span-line;
           }
         }
         .cta {
@@ -122,100 +117,256 @@ body {
         padding: 0.5rem;
         padding-top: 0.8rem;
 
-        // .hero__social-text {
-        //   // writing-mode: vertical-lr;
-        // }
+        @include desktop {
+          padding-top: 5rem;
+          align-items: flex-start;
+        }
+
+        .hero__social-text {
+          @include desktop {
+            writing-mode: vertical-lr;
+            margin: 8px;
+            font-size: 1.2rem;
+          }
+        }
       }
 
       .timeline {
         width: 100%;
+        height: 130px;
+        top: 15rem;
+        position: fixed;
         grid-area: tl;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-end;
         padding: 0.5em;
         gap: 0.5rem;
         justify-self: right;
-        position: fixed;
-        top: 35%;
 
         .timeline__text {
           margin: 0;
         }
 
-        .number a{
-          text-decoration: none;
+        .number a {
           color: $color-font;
-          
+        }
+
+        //hover
+
+        .number a:hover {
+          @include hoverTex;
+        }
+
+        @include desktop {
+          padding-top: 5rem;
+          font-size: 1.2rem;
+          top: initial;
+        }
+      }
+
+      .timeline::after {
+        content: "";
+        height: 115px;
+        position: fixed;
+        border-right: 1px solid #ffff;
+        right: 15px;
+      }
+    }
+
+    //section guide traveler
+    //---------------------
+    .guide-trav {
+      width: 40%;
+      margin: 0 auto;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: minmax(300px, 1fr);
+      grid-template-rows: auto;
+      grid-template-areas:
+        "t1"
+        "t2"
+        "t3";
+      gap: 4rem;
+
+      @include desktop {
+        width: 70%;
+      }
+    }
+
+    .guide__card {
+      position: relative;
+      text-align: center;
+      padding: 5px;
+
+      .span__number {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $color-numbers;
+        font-size: 5rem;
+        opacity: 0.3;
+
+        @include desktop {
+          font-size: 8rem;
+          top: 3rem;
+          left: -5rem;
+        }
+      }
+
+      .number-2 {
+        @include desktop {
+          right: -11rem;
+          top: 3rem;
+        }
+      }
+
+      .sub__title {
+        @include sub-t;
+
+        span {
+          @include span-line;
+        }
+      }
+
+      .card__title {
+        font-family: "DM Serif Text", serif;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+        margin: 10px 0;
+      }
+
+      @include desktop {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .card__body {
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+        @include desktop {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: left;
+          width: 400px;
+
+          .card__title {
+            font-size: 3rem;
+            line-height: 2.8rem;
+          }
+
+          .card__copy {
+            width: 470px;
+            font-size: 1rem;
+            line-height: 1.3rem;
+            padding-right: 1rem;
+            text-shadow: 2px 2px #000;
+          }
+        }
+      }
+
+      .card__figure img {
+        width: 100%;
+        height: auto;
+      }
+
+      .button {
+        @include buttons;
+        justify-content: center;
+
+        @include desktop {
+          justify-content: flex-start;
         }
       }
     }
-  
 
-  .guide-trav {
-    width: 40vw;
-    margin: 0 auto;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: minmax(300px, 1fr);
-    grid-template-rows: repeat(3, 0.5fr);
-    grid-template-areas:
-      "t1"
-      "t2"
-      "t3";
-    gap: 2rem;
-
-    // @include desktop{
-    //   width: 60vw;
-    // }
-
-    
+    .guide__card-reverse {
+      @include desktop {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 3rem;
+      }
     }
 
+    //footer section
+    //------------
 
-    
- 
+    .footer {
+      text-align: center;
+      width: 90%;
+      margin: 0 auto;
+      padding: 1rem;
 
+      @include desktop {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        text-align: left;
+      }
 
-  .guide__card{
-    text-align: center;
-    padding: 5px;
-   
-    @include desktop{
-      display: flex;
-      gap: 2rem;
+      .footer__list {
+        a {
+          font-size: 0.9rem;
+          line-height: 1rem;
+          color:$color-font ;
+        }
+      }
+
+      .footer__left {
+        padding: 0 3rem;
+
+        @include desktop {
+          height: 215px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .footer__figure {
+          margin: 0;
+        }
+
+        .figure__copy {
+          line-height: 1.3rem;
+          font-size: 0.8rem;
+
+          @include desktop {
+            width: 350px;
+          }
+        }
+
+        .footer__copyr {
+          font-size: 0.7rem;
+          color: $color-numbers;
+          opacity: 0.5;
+        }
+      }
+
+      .footer__right {
+        @include desktop {
+          display: flex;
+          gap: 8rem;
+
+          .footer__list {
+            margin: 0;
+
+            li {
+              margin-bottom: 1rem;
+            }
+          }
+
+          .list__title {
+            margin-bottom: 0.8rem;
+          }
+        }
+
+        .list__title {
+          color: $color-assent;
+        }
+      }
     }
-
-    
-    
-    .card__body{
-      font-size: .8rem;
-      line-height: 1.3rem;
-     @include desktop{
-      width: 350px;
-     }
-    }
-
-
-
-    .card__figure img{
-      width: 100%;
-      height: auto;
-    }
-
-
-    .button{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      text-transform: uppercase;
-      border: transparent;
-      background: transparent;
-      color: $color-assent;
-    }
-  } 
- }
+  }
 }
-
-  
-

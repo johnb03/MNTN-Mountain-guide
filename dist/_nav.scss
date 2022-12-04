@@ -1,13 +1,11 @@
-@import "variable";
+@import "./variable";
 
 .nav__bar {
   width: 100%;
-  // margin: 0 auto;
   display: flex;
   padding: 10px;
   justify-content: space-between;
   background: transparent;
-  // overflow: hidden;
   
   
   .nav__logo {
@@ -34,6 +32,7 @@
     background: transparent;
     border: none;
     color: $color-font;
+    transition: .3S;
   
     
     
@@ -43,6 +42,10 @@
       z-index: 10;
     }
   }
+  
+.ham:active{
+  transform:translateY(10px) ;
+}
 
   
 
@@ -73,23 +76,27 @@
 
     }
 
+
     .link {
       text-decoration: none;
       font-family: "Poppins", sans-serif;
       color: $color-font;
       cursor: pointer;
       user-select: none;
+      transition: all 500ms ease-in-out;
+
+
      
     }
 
-    .link:hover {
-      @include tablet-nav {
-        @include hoverTex;
-      }
+    .link:hover{
+      @include hoverTex;
     }
 
+  
+
     .nav__links {
-      
+    
       gap: 1rem;
       list-style: none;
       @include tablet-nav {
@@ -116,5 +123,9 @@
     }
    }
   
+
+
+
+     
 }
 

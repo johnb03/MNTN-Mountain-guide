@@ -1,93 +1,101 @@
-$color-assent:#FBD784;
-$color-BG-body:#0B1D26;
-$color-font:#ffff;
-$color-numbers:#D9D9D9;
+$color-assent: #fbd784;
+$color-BG-body: #0b1d26;
+$color-font: #ffff;
+$color-numbers: #d9d9d9;
+$font-size-copy: calc(14px + (18 - 14) * ((100vw - 300px) / (14000 - 300)));
 
-
-   /* From https://css.glass */
-@mixin efectglass{
-background: rgba(19, 19, 19, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(19, 19, 19, 0.3);
+/* From https://css.glass */
+@mixin efectglass {
+  background: rgba(19, 19, 19, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(19, 19, 19, 0.3);
 }
- 
+
+@mixin sub-t {
+  color: $color-assent;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
+
+@mixin span-line {
+  border-top: 1px solid $color-assent;
+  width: 35px;
+  height: auto;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  margin-right: 5px;
+}
+
+@mixin buttons{
+    width: 100%;
+    display: flex;
+    text-transform: uppercase;
+    border: transparent;
+    background: transparent;
+    color: $color-assent;
+}
+
 //hover
 
 @mixin hoverTex {
-    color: $color-assent;
-    transition: all 400ms ease-in-out;
-    
+  color: $color-assent;
+  transition: all 400ms ease-in-out;
 }
-
 
 //media
 
 //mediafor nav
 @mixin tablet-nav {
-    @media screen and (max-width:48em) {
-        @content;
-        
-    }
-
+  @media screen and (max-width: 48em) {
+    @content;
+  }
 }
 
 @mixin desktop-nav {
-    @media screen and (max-width:75em) {
-        @content;
-        
-    }
+  @media screen and (max-width: 75em) {
+    @content;
+  }
 }
 
 //media general
 
 @mixin mobile-320 {
-    @media screen and (min-width:48em) {
-        @content;
-        
-    }
-
+  @media screen and (min-width: 48em) {
+    @content;
+  }
 }
 
 @mixin mobile-375 {
-    @media screen and (min-width:23.4375em) {
-        @content;
-        
-    }
-
+  @media screen and (min-width: 23.4375em) {
+    @content;
+  }
 }
 
 @mixin mobile-425 {
-    @media screen and (min-width:26.5625em) {
-        @content;
-        
-    }
-
+  @media screen and (min-width: 26.5625em) {
+    @content;
+  }
 }
-
 
 @mixin tablet {
-    @media screen and (min-width:48em) {
-        @content;
-        
-    }
-
+  @media screen and (min-width: 48em) {
+    @content;
+  }
 }
 
-
 @mixin laptop {
-    @media screen and (min-width:64em) {
-        @content;
-        
-    }
+  @media screen and (min-width: 64em) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media screen and (min-width:75em) {
-        @content;
-        
-    }
+  @media screen and (min-width: 75em) {
+    @content;
+  }
 }
-
