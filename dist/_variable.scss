@@ -76,6 +76,13 @@ $font-size-copy: calc(14px + (18 - 14) * ((100vw - 300px) / (14000 - 300)));
   }
 }
 
+@mixin mobile-412-Lg  {
+  @media screen and  (min-width: 25.75em) {
+    @content;
+    
+  }
+}
+
 @mixin mobile-425 {
   @media screen and (min-width: 26.5625em) {
     @content;

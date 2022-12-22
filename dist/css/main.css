@@ -186,9 +186,9 @@ body .container .box-bg img:nth-child(2) {
 body .container .box-bg img:nth-child(3) {
   top: 17rem;
 }
-@media screen and (min-width: 26.5625em) {
+@media screen and (min-width: 23.4375em) {
   body .container .box-bg img:nth-child(3) {
-    top: 18rem;
+    top: 19rem;
   }
 }
 @media screen and (min-width: 48em) {

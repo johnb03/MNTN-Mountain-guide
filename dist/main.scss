@@ -42,8 +42,8 @@ body {
       img:nth-child(3) {
         top: 17rem;
 
-        @include mobile-425 {
-          top: 18rem;
+        @include mobile-375 {
+          top: 19rem;
         }
         @include tablet {
           top: 26rem;
